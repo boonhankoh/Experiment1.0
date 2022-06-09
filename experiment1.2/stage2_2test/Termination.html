@@ -1,0 +1,22 @@
+{{ block title }}
+Result for Stage 2
+{{ endblock }}
+
+{{ block content }}
+
+
+<p>
+    Your stage was terminated early as you completed fewer than 7 sliders in the last round i.e. {{ player.round_number }}.
+</p>
+
+<p>
+    Sliders completed = {{ player.in_all_rounds() }}
+</p>
+
+<p>
+    <strong>If this stage is chosen for payment, your payoff will be = {{ player.potential_payoff }}</strong>
+</p>
+
+{{ next_button }}
+
+{{ endblock }}

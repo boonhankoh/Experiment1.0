@@ -1,0 +1,37 @@
+{{ block title }}Survey{{ endblock }}
+{{ block content }}
+
+    <p><em>
+        All stages are now complete. Please answer the following questions. Remember, data collected is anonymised.
+    </em></p>
+
+    <p>
+        Please indicate to what extent do you agree or disagree with the following statements.
+    </p>
+
+
+    <p>
+        <li>I support CISWO (Coal Industry Social Welfare Organisation). Your previously assigned rank to this
+                charity was {{ participant.CISWO }}
+        {{ formfield 'strength_ciswo'}}
+        </li><br>
+
+
+        <li>I support The Crowd:Ember. Your previously assigned rank to this charity was {{ participant.Ember }}
+                 {{ formfield 'strength_ember' }}
+        </li><br>
+
+        <li>I support CARE (Christian Action, Research, and Education) . Your previously assigned rank to this charity was {{ participant.CARE }}
+        {{ formfield 'strength_care' }}
+        </li><br>
+
+        <li>I support BPAS (British Pregnancy Advisory Service) . Your previously assigned rank to this charity was {{ participant.BPAS }}
+        {{ formfield 'strength_bpas' }}
+        </li>
+    </p>
+
+
+
+    {{ next_button }}
+
+{{ endblock }}
