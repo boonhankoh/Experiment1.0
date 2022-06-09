@@ -1,0 +1,22 @@
+{{ block title }}
+    Welcome to the experiment!
+{{ endblock }}
+
+{{ block content }}
+<div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p>There are 3 stages of equal duration in this experiment. <em>Each stage has 5 rounds of 90 seconds each </em> and
+                the same slider task. The stages are independent of each other. You will be given further instructions
+                for each stage.</p>
+
+            <p><em>Your payment will be determined by your performance in one randomly chosen stage. </em> This will be chosen by
+                the computer at the end of the experiment and you will be informed about it then.</p>
+
+            <p>Please remain silent throughout the experiment and do not communicate with other participants. If you
+                have questions, please raise you hand and the experimemter will come over to you.</p>
+
+            <p>If not, click 'next' to proceed.</p>
+    {{ formfields }}
+    {{ next_button }}
+
+{{ endblock }}
