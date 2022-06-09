@@ -39,7 +39,6 @@ PARTICIPANT_FIELDS = [
     'is_dropout',
     'app_payoffs',
     'charity_donations',
-    's1_num_correct',
 ]
 SESSION_FIELDS = ['params']
 

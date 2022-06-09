@@ -28,7 +28,7 @@ class Subsession(BaseSubsession):
 def creating_session(subsession: Subsession):
     for p in subsession.get_players():
         p.participant.app_payoffs = {}
-        p.participant.s1_num_correct = {}
+
     session = subsession.session
     defaults = dict(
         trial_delay=1.0,
@@ -232,9 +232,8 @@ class Game(Page):
         puzzle = get_current_puzzle(player)
 
         if puzzle and puzzle.response_timestamp:
-            participant= player.participant
             player.num_correct = puzzle.num_correct
-            participant.s1_num_correct['player.round_number'] = puzzle.num_correct
+
 
 
 class Results(Page):
