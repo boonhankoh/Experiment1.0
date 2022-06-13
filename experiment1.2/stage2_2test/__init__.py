@@ -231,7 +231,8 @@ class Game(Page):
 
         if puzzle and puzzle.response_timestamp:
             player.num_correct = puzzle.num_correct
-
+            
+        player.participant.vars['num_correct_'+ str(player.round_number)] = player.num_correct
 
 
 class Termination(Page):
@@ -246,6 +247,31 @@ class Termination(Page):
         potential_payoff = cu(1.5*player.round_number)
         player.potential_payoff = potential_payoff
         participant.app_payoffs['stage2_2test'] = potential_payoff
+        
+        num_correct_1 = -1
+        num_correct_2 = -1
+        num_correct_3 = -1
+        num_correct_4 = -1
+        num_correct_5 = -1
+        
+        if player.round_number >= 1:
+            num_correct_1 = participant.vars['num_correct_1']
+        elif player.round_number >= 2:
+            num_correct_2 = participant.vars['num_correct_2']
+        elif player.round_number >= 3:
+            num_correct_3 = participant.vars['num_correct_3']
+        elif player.round_number >= 4:
+            num_correct_4 = participant.vars['num_correct_4']
+        elif player.round_number >= 5:
+            num_correct_5 = participant.vars['num_correct_5']
+        
+        return dict(
+                num_correct_1 = num_correct_1
+                num_correct_2 = num_correct_2
+                num_correct_3 = num_correct_3
+                num_correct_4 = num_correct_4
+                num_correct_5 = num_correct_5
+            )
 
 
 
@@ -266,6 +292,14 @@ class Results(Page):
         potential_payoff = cu(7.5)
         player.potential_payoff = potential_payoff
         participant.app_payoffs['stage2_2test'] = potential_payoff
+        
+        return dict(
+                num_correct_1 = participant.vars['num_correct_1']
+                num_correct_2 = participant.vars['num_correct_2']
+                num_correct_3 = participant.vars['num_correct_3']
+                num_correct_4 = participant.vars['num_correct_4']
+                num_correct_5 = participant.vars['num_correct_5']
+            )
 
 
 
