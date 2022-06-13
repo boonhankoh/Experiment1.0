@@ -233,9 +233,10 @@ class Game(Page):
 
         if puzzle and puzzle.response_timestamp:
             player.num_correct = puzzle.num_correct
-
-
-
+        
+        player.participant.vars['num_correct_'+ str(player.round_number)] = player.num_correct
+        
+        
 class Results(Page):
 
     @staticmethod
@@ -248,6 +249,14 @@ class Results(Page):
             potential_payoff = cu(7.5)
             player.potential_payoff = potential_payoff
             participant.app_payoffs['stage1_final'] = potential_payoff
-
+            
+            return dict(
+                num_correct_1 = participant.vars['num_correct_1']
+                num_correct_2 = participant.vars['num_correct_2']
+                num_correct_3 = participant.vars['num_correct_3']
+                num_correct_4 = participant.vars['num_correct_4']
+                num_correct_5 = participant.vars['num_correct_5']
+            )
+        
 
 page_sequence = [S1_Instructions, Game, Results]
