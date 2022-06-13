@@ -86,11 +86,11 @@ class MyPage(Page):
     def error_message(player, values):
         print('values is', values)
         if values['CISWO'] + values['Ember'] + values['CARE'] + values['BPAS'] !=10:
-            return 'Each charity must have a unique rank. Please check you ranking.'
+            return 'Each charity must have a unique rank. Please check your ranking.'
     def error_message(player, values):
         print('values is', values)
         if values['CISWO']*values['CISWO'] + values['Ember']*values['Ember'] + values['CARE']*values['CARE'] + values['BPAS']*values['BPAS'] !=30:
-            return 'Each charity must have a unique rank. Please check you ranking.'
+            return 'Each charity must have a unique rank. Please check your ranking.'
 
     def before_next_page(player: Player, timeout_happened):
         participant = player.participant
